@@ -51,7 +51,7 @@ app.use(express.json())
 app.get('/welcome', (req: Request, res: Response, next: NextFunction) => {
   return res.status(200).json({
     success: true,
-    message: 'Welcome to aether api!',
+    message: 'Welcome to my api!',
   })
 })
 const PORT = process.env.PORT || 8010
