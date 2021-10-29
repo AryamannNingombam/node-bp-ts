@@ -3,6 +3,7 @@ require('dotenv').config({
 })
 import { Request, Response, NextFunction } from 'express'
 import express from 'express'
+import { AuthRoutes } from './routes/User.routes'
 
 const cors = require('cors')
 const app = express()
@@ -47,7 +48,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 
 app.use(express.urlencoded())
 app.use(express.json())
-
+app.use('/api/auth',AuthRoutes);
 app.get('/welcome', (req: Request, res: Response, next: NextFunction) => {
   return res.status(200).json({
     success: true,
